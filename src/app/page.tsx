@@ -1,45 +1,63 @@
 "use client"
 
-import { Modal } from "@/components/Modal";
-import { PhotoItem } from "@/components/PhotoItem";
-import { photoList } from "@/data/PhotoList";
+import { questions } from "@/data/questions";
+import { QuestionItem } from "@/components/QuestionItem";
 import { useState } from "react";
+import { Results } from "@/components/Results";
 
 const Page = () => {
 
-  const [showModal, setShowModal] = useState(false);
-  const [imageOfModal, setImageOfModal] = useState('');
+  const title = 'Quiz de Vôlei';
+  const [answers, setAnswers] = useState<number[]>([]);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [showResult, setShowResult] = useState(false);
 
-  const openModal = (id:number) => {
-    const photo = photoList.find(item => item.id === id);
-    if (photo) {
-      setImageOfModal(photo.url);
-      setShowModal(true);
+  const loadNextQuestion = () => {
+
+    if (questions[currentQuestion + 1]) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setShowResult(true);
     }
   }
-  const closeModal = () => {
-    setShowModal(false);
+
+  const HandleAnswer = (answer: number) => {
+    setAnswers([ ...answers, answer ]);
+    loadNextQuestion();
+  }
+
+  const HandleRestartButton = () => {
+    setCurrentQuestion(0)
+    setAnswers([])
+    setShowResult(false)
   }
 
   return (
 
-    <div className="mx-2">
-      <h1 className="text-center text-3xl my-6 font-bold">Fotos Dark</h1>
-
-      <section className="container max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {photoList.map(item => (
-          <PhotoItem
-            key={item.id}
-            photo={item}
-            onClick={() => openModal(item.id)}
-          />
-        ))}
-      </section>
-
-      {showModal &&
-        <Modal image={imageOfModal} closeModal={closeModal}/>
-      }
-
+    <div className="w-screen h-screen flex justify-center items-center bg-blue-600">
+      <div className="w-full max-w-xl rounded-md bg-white text-black">
+        <div className="p-5 font-bold text-2xl shadow shadow-gray-300">{title}</div>
+        <div className="p-5">
+          {!showResult && 
+            <QuestionItem
+              question={questions[currentQuestion]}
+              count={currentQuestion + 1}
+              onAnswer={HandleAnswer}
+            />
+          }
+          {showResult &&
+            <Results questions={questions} answers={answers}/>
+          }
+        </div>
+        <div className="p-5 text-center border-t border-gray-300">
+          {!showResult &&
+            `${currentQuestion + 1} de ${questions.length} pergunta${questions.length === 1 ? '' : 's'}`
+          }
+          {showResult &&
+            <button onClick={HandleRestartButton} className="p-3 py-3 bg-blue-800 text-white rounded-md">Reiniciar Quiz</button>
+          }
+        </div>
+      </div>
     </div>
   );
 }
