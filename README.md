@@ -1,34 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Quiz de Vôlei 🏐
 
-## Getting Started
+## [Clique aqui para acessar o App](https://quiz-volei.vercel.app)
 
-First, run the development server:
+Um aplicativo de quiz sobre vôlei, desenvolvido com React, Next.js e TypeScript.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Tecnologias Utilizadas 🚀
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O projeto utiliza as seguintes tecnologias:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 📦 **React**: Biblioteca JavaScript para construir interfaces de usuário interativas e reutilizáveis.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- 🌐 **Next.js**: Framework React que oferece renderização no lado do servidor e facilita a criação de aplicativos web rápidos e otimizados.
 
-## Learn More
+- ⌨️ **TypeScript**: Linguagem de programação que adiciona tipagem estática ao JavaScript, tornando o desenvolvimento mais seguro e eficiente.
 
-To learn more about Next.js, take a look at the following resources:
+## Funcionalidades 🌟
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+O projeto possui as seguintes funcionalidades:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Quiz de Vôlei**: Os usuários podem responder perguntas sobre vôlei e testar seus conhecimentos.
 
-## Deploy on Vercel
+- **Pontuação**: O aplicativo exibe a pontuação do usuário após completar o quiz.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Como Executar o Projeto ⚙️
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. **Clonar o Repositório**: Utilize o comando `git clone` para clonar este repositório em seu ambiente local.
+
+2. **Instalar Dependências**: Navegue até o diretório do projeto e execute `npm install` ou `yarn install` para instalar as dependências.
+
+3. **Iniciar o Servidor de Desenvolvimento**: Execute o comando `npm start` ou `yarn start` para iniciar o servidor de desenvolvimento.
+
+4. **Acessar a Aplicação**: Abra um navegador e acesse `http://localhost:3000` para utilizar o aplicativo.
+
+## Exemplo de Uso 📝
+
+1. Acesse a aplicação por meio do navegador.
+
+2. Responda às perguntas do quiz sobre vôlei.
+
+3. Após completar o quiz, sua pontuação será exibida.
+
+## Conclusão 🎉
+
+Este projeto é um aplicativo de quiz de vôlei simples e divertido, desenvolvido com React, Next.js e TypeScript. Pode ser usado como um exercício de aprendizado ou como base para expandir e criar quizzes mais complexos em diferentes áreas.
